@@ -29,14 +29,16 @@ defmodule Dlex.MixProject do
   defp deps do
     [
       {:db_connection, "~> 2.1"},
-      {:grpc, "~> 0.3.1"},
-      {:jason, "~> 1.0", optional: true},
-      {:mint, "~> 1.0", optional: true},
-      {:castore, "~> 0.1.4", optional: true},
-      {:ecto, "~> 3.1", optional: true},
+      {:grpc, github: "elixir-grpc/grpc"},
+      # 2.9.0 fixes some important bugs, so it's better to use ~> 2.9.0
+      {:cowlib, "~> 2.9.0", override: true},
+      {:jason, "~> 1.2", optional: true},
+      # {:mint, github: "ericmj/mint", branch: "master", optional: true},
+      # {:castore, "~> 0.1.0", optional: true},
+      {:ecto, "~> 3.4", optional: true},
       {:earmark, "~> 1.4", only: :dev},
       {:exrun, "~> 0.1.0", only: :dev},
-      {:ex_doc, "~> 0.19", only: :dev}
+      {:ex_doc, "~> 0.21", only: :dev}
     ]
   end
 
